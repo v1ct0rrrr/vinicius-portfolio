@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 60% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 60% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 60% 12%;
+
+    --primary: 210 60% 12%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 50% 96%;
+    --secondary-foreground: 210 60% 12%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 20% 45%;
+
+    --accent: 210 55% 18%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 210 60% 12%;
+
+    --radius: 0.75rem;
+    
+    --shadow-premium: 0 10px 40px -10px hsl(210 60% 12% / 0.15);
+    --shadow-card: 0 4px 20px -4px hsl(210 60% 12% / 0.1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 60% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 210 55% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 210 55% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 210 60% 12%;
+
+    --secondary: 210 50% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 210 50% 18%;
+    --muted-foreground: 210 20% 70%;
+
+    --accent: 210 55% 22%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 50% 18%;
+    --input: 210 50% 18%;
+    --ring: 210 20% 70%;
+    
+    --shadow-premium: 0 10px 40px -10px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-['Poppins',sans-serif] antialiased;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .glass-effect {
+    background: hsl(var(--background) / 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .premium-shadow {
+    box-shadow: var(--shadow-premium);
+  }
+  
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
+
+/* Carousel 3D com vídeos diferentes */
+
+@layer components {
+  /* Carousel 3D com vídeos diferentes */
+  .carousel-stacked {
+    position: relative;
+    perspective: 2000px;
+    overflow: visible;
+  }
+
+  .carousel-stacked .embla__container {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .carousel-stacked .embla__slide {
+    position: relative;
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    flex: 0 0 100%;
+  }
+
+  /* Todos os slides começam invisíveis */
+  .carousel-stacked .embla__slide {
+    opacity: 0;
+    transform: scale(0.5);
+    filter: blur(10px);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Vídeo anterior (esquerda): menor, -10° inclinado, blur leve */
+  .carousel-stacked .embla__slide:has(+ .embla__slide.is-snapped) {
+    opacity: 1;
+    transform: 
+      translateX(35%) 
+      translateZ(-200px) 
+      scale(0.7) 
+      rotateY(-10deg);
+    filter: blur(4px) drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25));
+    z-index: 2;
+    pointer-events: auto;
+  }
+
+  /* Vídeo central (ativo): nítido, grande, destaque */
+  .carousel-stacked .embla__slide.is-snapped {
+    opacity: 1;
+    transform: translateX(0) translateZ(0) scale(1);
+    filter: blur(0);
+    z-index: 10;
+    pointer-events: auto;
+  }
+
+  /* Fundo ampliado (apenas no slide ativo) */
+  .carousel-stacked .embla__slide.is-snapped::before {
+    content: '';
+    position: absolute;
+    inset: -100%;
+    z-index: -1;
+    background-image: var(--background-video);
+    background-size: cover;
+    background-position: center;
+    filter: blur(40px) grayscale(50%);
+    opacity: 0.35;
+    transform: scale(1.5);
+    pointer-events: none;
+  }
+
+  /* Próximo vídeo (direita): menor, +10° inclinado, blur leve */
+  .carousel-stacked .embla__slide.is-snapped + .embla__slide {
+    opacity: 1;
+    transform: 
+      translateX(-35%) 
+      translateZ(-200px) 
+      scale(0.7) 
+      rotateY(10deg);
+    filter: blur(4px) drop-shadow(-10px 10px 20px rgba(0, 0, 0, 0.25));
+    z-index: 2;
+    pointer-events: auto;
+  }
+
+  /* Esconder slides muito distantes */
+  .carousel-stacked .embla__slide:not(.is-snapped):not(:has(+ .embla__slide.is-snapped)):not(.embla__slide.is-snapped + .embla__slide) {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0);
+  }
+
+  /* Botões de navegação estilizados */
+  .carousel-stacked button[class*="Carousel"] {
+    background: hsl(var(--primary));
+    border: none;
+    color: white;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 20;
+    opacity: 0.95;
+  }
+
+  .carousel-stacked button[class*="Carousel"]:hover:not(:disabled) {
+    background: hsl(var(--primary) / 0.9);
+    transform: scale(1.15);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    opacity: 1;
+  }
+
+  .carousel-stacked button[class*="Carousel"]:disabled {
+    opacity: 0.3;
+  }
+
+  /* Remover animações conflitantes */
+  .carousel-stacked .embla__slide .animate-on-scroll {
+    animation: none !important;
+  }
+
+  .carousel-stacked .embla__slide .hover\:scale-105:hover {
+    transform: none !important;
+  }
+
+  /* Viewport com overflow visible para mostrar os 3 vídeos */
+  .carousel-stacked .embla__viewport {
+    overflow: visible !important;
+    padding: 80px 0;
+  }
+
+  /* Gradiente sutil para contexto */
+  .carousel-stacked::before {
+    content: '';
+    position: absolute;
+    inset: -30%;
+    background: radial-gradient(circle at center, hsl(var(--background) / 0.2), transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+  }
+}
