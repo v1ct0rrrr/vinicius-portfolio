@@ -59,27 +59,27 @@ const Index = () => {
   const portfolioVideos = [
     { 
       handle: "@phcardoso.oficial",
-      src: "/videos/phcardosoa.mp4",
+      src: "https://f005.backblazeb2.com/file/vinicius-portfolio-videos/phcardoso.mp4",
       instagramUrl: "https://www.instagram.com/phcardoso.oficial"
     },
     { 
       handle: "@ovendedorempresario.ofc",
-      src: "/videos/ovendedora.mp4",
+      src: "https://f005.backblazeb2.com/file/vinicius-portfolio-videos/ovendedor.mp4",
       instagramUrl: "https://www.instagram.com/ovendedorempresario.ofc"
     },
     { 
       handle: "@phellipe_oliveira",
-      src: "/videos/phellipea.mp4",
+      src: "https://f005.backblazeb2.com/file/vinicius-portfolio-videos/phellipe.mp4",
       instagramUrl: "https://www.instagram.com/phellipe_oliveira"
     },
     { 
       handle: "@cristina.ruffatto",
-      src: "/videos/cristinaa.mp4",
+      src: "https://f005.backblazeb2.com/file/vinicius-portfolio-videos/cristina.mp4",
       instagramUrl: "https://www.instagram.com/cristina.ruffatto"
     },
     { 
       handle: "@riveodonto",
-      src: "/videos/riveodontoa.mp4",
+      src: "https://f005.backblazeb2.com/file/vinicius-portfolio-videos/riveodonto.mp4",
       instagramUrl: "https://www.instagram.com/riveodonto"
     },
   ];
