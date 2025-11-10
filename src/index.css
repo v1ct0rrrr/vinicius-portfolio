@@ -193,26 +193,31 @@ All colors MUST be HSL.
     transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
     flex: 0 0 100%;
-  }
-
-  /* Todos os slides começam invisíveis */
-  .carousel-stacked .embla__slide {
-    opacity: 0;
+    opacity: 0; 
     transform: scale(0.5);
     filter: blur(10px);
     z-index: 1;
     pointer-events: none;
   }
 
+  /* Todos os slides começam invisíveis */
+  /* .carousel-stacked .embla__slide {
+    opacity: 0;
+    transform: scale(0.5);
+    filter: blur(10px);
+    z-index: 1;
+    pointer-events: none;
+  } */
+
   /* Vídeo anterior (esquerda): menor, -10° inclinado, blur leve */
   .carousel-stacked .embla__slide:has(+ .embla__slide.is-snapped) {
-    opacity: 1;
+    opacity: 0.6;
     transform: 
-      translateX(35%) 
-      translateZ(-200px) 
-      scale(0.7) 
+      translateX(45%) 
+      translateZ(-400px) 
+      scale(0.6) 
       rotateY(-10deg);
-    filter: blur(4px) drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25));
+    filter: blur(8px) brightness(0.6) drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.4));
     z-index: 2;
     pointer-events: auto;
   }
@@ -243,13 +248,13 @@ All colors MUST be HSL.
 
   /* Próximo vídeo (direita): menor, +10° inclinado, blur leve */
   .carousel-stacked .embla__slide.is-snapped + .embla__slide {
-    opacity: 1;
+    opacity: 0.6;
     transform: 
-      translateX(-35%) 
-      translateZ(-200px) 
-      scale(0.7) 
+      translateX(-45%) 
+      translateZ(-400px) 
+      scale(0.6) 
       rotateY(10deg);
-    filter: blur(4px) drop-shadow(-10px 10px 20px rgba(0, 0, 0, 0.25));
+    filter: blur(8px) brightness(0.6) drop-shadow(-10px 10px 20px rgba(0, 0, 0, 0.4));
     z-index: 2;
     pointer-events: auto;
   }
@@ -258,7 +263,8 @@ All colors MUST be HSL.
   .carousel-stacked .embla__slide:not(.is-snapped):not(:has(+ .embla__slide.is-snapped)):not(.embla__slide.is-snapped + .embla__slide) {
     opacity: 0;
     pointer-events: none;
-    transform: scale(0);
+    transform: scale(0.5);
+    filter: blur(15px);
   }
 
   /* Botões de navegação estilizados */

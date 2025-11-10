@@ -59,27 +59,27 @@ const Index = () => {
   const portfolioVideos = [
     { 
       handle: "@phcardoso.oficial",
-      src: "https://f005.backblazeb2.com/file/vinicius-portfolio-videos/phcardoso.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/phcardoso.mp4",
       instagramUrl: "https://www.instagram.com/phcardoso.oficial"
     },
     { 
       handle: "@ovendedorempresario.ofc",
-      src: "https://f005.backblazeb2.com/file/vinicius-portfolio-videos/ovendedor.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/ovendedor.mp4",
       instagramUrl: "https://www.instagram.com/ovendedorempresario.ofc"
     },
     { 
       handle: "@phellipe_oliveira",
-      src: "https://f005.backblazeb2.com/file/vinicius-portfolio-videos/phellipe.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/phellipe.mp4",
       instagramUrl: "https://www.instagram.com/phellipe_oliveira"
     },
     { 
       handle: "@cristina.ruffatto",
-      src: "https://f005.backblazeb2.com/file/vinicius-portfolio-videos/cristina.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/cristina.mp4",
       instagramUrl: "https://www.instagram.com/cristina.ruffatto"
     },
     { 
       handle: "@riveodonto",
-      src: "https://f005.backblazeb2.com/file/vinicius-portfolio-videos/riveodonto.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/riveodonto.mp4",
       instagramUrl: "https://www.instagram.com/riveodonto"
     },
   ];
@@ -226,7 +226,7 @@ const Index = () => {
       </section>
 
       {/* Portfolio */}
-      <section className="py-20 lg:py-32">
+      <section className="py-20 lg:py-32 overflow-x-hidden overflow-y-hidden">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto space-y-12">
             <div className="text-center space-y-4 animate-on-scroll">
