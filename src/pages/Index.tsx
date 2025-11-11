@@ -124,7 +124,7 @@ const Index = () => {
           </div>
           <div className="relative animate-on-scroll">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-3xl opacity-50"></div>
-            <div className="relative rounded-2xl overflow-hidden premium-shadow aspect-[3/4] transition-smooth hover:scale-[1.02]">
+            <div className="relative rounded-2xl overflow-hidden premium-shadow aspect-[3/4] transition-smooth hover:scale-[1.02] lg:max-w-md lg:mx-auto">
               <img
                 src={viniciusHero}
                 alt="Vinícius Medeiros"
