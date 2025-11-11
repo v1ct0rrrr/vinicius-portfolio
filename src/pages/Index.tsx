@@ -266,12 +266,12 @@ const Index = () => {
               </CarouselContent>
               
               <CarouselPrevious 
-                className="left-4 md:left-12 lg:left-24 
+                className="left-4 md:left-16 lg:left-40 xl:left-64 
                           h-14 w-14 md:h-16 md:w-16 lg:h-20 lg:w-20 
                           shadow-lg transition-all hover:scale-110" 
               />
               <CarouselNext 
-                className="right-4 md:right-12 lg:right-24 
+                className="right-4 md:right-16 lg:right-40 xl:right-64 
                           h-14 w-14 md:h-16 md:w-16 lg:h-20 lg:w-20 
                           shadow-lg transition-all hover:scale-110" 
               />
@@ -311,10 +311,23 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="border-t border-border/40 py-8">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-6 text-center space-y-2"> {/* <-- Adiciona 'space-y-2' */}
           <p className="text-sm text-muted-foreground">
             © 2025 Vinícius Medeiros. Edição de Autoridade Profissional.
           </p>
+
+          <p className="text-xs text-muted-foreground/70">
+            Desenvolvido por {}
+            <a 
+              href="https://zeniuxtech.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-foreground transition-colors"
+            >
+              ZeniuxTech
+            </a>
+          </p>
+
         </div>
       </footer>
     </div>
