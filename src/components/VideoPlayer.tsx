@@ -42,7 +42,7 @@ export const VideoPlayer = ({ src, handle, instagramUrl }: VideoPlayerProps) => 
             <video
               src={src}
               loop
-              autoPlay
+              //autoPlay
               muted
               playsInline
               className="w-full h-full object-cover blur-sm"
@@ -56,7 +56,7 @@ export const VideoPlayer = ({ src, handle, instagramUrl }: VideoPlayerProps) => 
             <video
               src={src}
               loop
-              autoPlay
+              //autoPlay
               muted
               playsInline
               className="w-full h-full object-cover blur-sm"
