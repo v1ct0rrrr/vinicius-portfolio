@@ -293,7 +293,7 @@ const Index = () => {
             <p className="text-lg lg:text-xl opacity-95 leading-relaxed">
               Vamos conversar e entender o que faz sentido para o seu posicionamento.
               <br />
-              Sem pacotes. Sem preço fixo. Cada entrega é personalizada.
+              Com pacotes. Sem preço fixo. Cada entrega é personalizada.
             </p>
             <Button
               asChild
