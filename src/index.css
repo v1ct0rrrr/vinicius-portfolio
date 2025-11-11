@@ -172,13 +172,11 @@ All colors MUST be HSL.
   }
 }
 
-/* Carousel 3D com vídeos diferentes */
+/* Carousel 3D com fade */
 
 @layer components {
-  /* Carousel 3D com vídeos diferentes */
   .carousel-stacked {
     position: relative;
-    perspective: 2000px;
     overflow: visible;
   }
 
@@ -188,108 +186,26 @@ All colors MUST be HSL.
     gap: 0;
   }
 
+  /* Um fade simples */
   .carousel-stacked .embla__slide {
-    position: relative;
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-style: preserve-3d;
+    transition: opacity 0.5s ease-in-out; /* Transição de fade */
     flex: 0 0 100%;
-    opacity: 0; 
-    transform: scale(0.5);
-    filter: blur(10px);
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  /* Todos os slides começam invisíveis */
-  /* .carousel-stacked .embla__slide {
     opacity: 0;
-    transform: scale(0.5);
-    filter: blur(10px);
     z-index: 1;
     pointer-events: none;
-  } */
-
-  /* Vídeo anterior (esquerda): menor, -10° inclinado, blur leve */
-  .carousel-stacked .embla__slide:has(+ .embla__slide.is-snapped) {
-    opacity: 0.6;
-    transform: 
-      translateX(45%) 
-      translateZ(-400px) 
-      scale(0.6) 
-      rotateY(-10deg);
-    filter: blur(8px) brightness(0.6) drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.4));
-    z-index: 2;
-    pointer-events: auto;
+    
+    /* Empilha os slides */
+    position: absolute; 
+    top: 0;
+    left: 0;
   }
 
-  /* Vídeo central (ativo): nítido, grande, destaque */
+  /* O slide ativo fica visível */
   .carousel-stacked .embla__slide.is-snapped {
     opacity: 1;
-    transform: translateX(0) translateZ(0) scale(1);
-    filter: blur(0);
     z-index: 10;
     pointer-events: auto;
-  }
-
-  /* Fundo ampliado (apenas no slide ativo) */
-  .carousel-stacked .embla__slide.is-snapped::before {
-    content: '';
-    position: absolute;
-    inset: -100%;
-    z-index: -1;
-    background-image: var(--background-video);
-    background-size: cover;
-    background-position: center;
-    filter: blur(40px) grayscale(50%);
-    opacity: 0.35;
-    transform: scale(1.5);
-    pointer-events: none;
-  }
-
-  /* Próximo vídeo (direita): menor, +10° inclinado, blur leve */
-  .carousel-stacked .embla__slide.is-snapped + .embla__slide {
-    opacity: 0.6;
-    transform: 
-      translateX(-45%) 
-      translateZ(-400px) 
-      scale(0.6) 
-      rotateY(10deg);
-    filter: blur(8px) brightness(0.6) drop-shadow(-10px 10px 20px rgba(0, 0, 0, 0.4));
-    z-index: 2;
-    pointer-events: auto;
-  }
-
-  /* Esconder slides muito distantes */
-  .carousel-stacked .embla__slide:not(.is-snapped):not(:has(+ .embla__slide.is-snapped)):not(.embla__slide.is-snapped + .embla__slide) {
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(0.5);
-    filter: blur(15px);
-  }
-
-  /* Botões de navegação estilizados */
-  .carousel-stacked button[class*="Carousel"] {
-    background: hsl(var(--primary));
-    border: none;
-    color: white;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 50%;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    z-index: 20;
-    opacity: 0.95;
-  }
-
-  .carousel-stacked button[class*="Carousel"]:hover:not(:disabled) {
-    background: hsl(var(--primary) / 0.9);
-    transform: scale(1.15);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-    opacity: 1;
-  }
-
-  .carousel-stacked button[class*="Carousel"]:disabled {
-    opacity: 0.3;
+    position: relative;
   }
 
   /* Remover animações conflitantes */
@@ -301,19 +217,8 @@ All colors MUST be HSL.
     transform: none !important;
   }
 
-  /* Viewport com overflow visible para mostrar os 3 vídeos */
   .carousel-stacked .embla__viewport {
-    overflow: visible !important;
+    overflow: hidden !important;
     padding: 80px 0;
-  }
-
-  /* Gradiente sutil para contexto */
-  .carousel-stacked::before {
-    content: '';
-    position: absolute;
-    inset: -30%;
-    background: radial-gradient(circle at center, hsl(var(--background) / 0.2), transparent 70%);
-    z-index: 0;
-    pointer-events: none;
   }
 }

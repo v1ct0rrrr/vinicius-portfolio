@@ -59,27 +59,27 @@ const Index = () => {
   const portfolioVideos = [
     { 
       handle: "@phcardoso.oficial",
-      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/phcardoso-comprimido.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/comprimido-phcardoso.mp4",
       instagramUrl: "https://www.instagram.com/phcardoso.oficial"
     },
     { 
       handle: "@ovendedorempresario.ofc",
-      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/ovendedor-comprimido.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/comprimido-ovendedor.mp4",
       instagramUrl: "https://www.instagram.com/ovendedorempresario.ofc"
     },
     { 
       handle: "@phellipe_oliveira",
-      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/phellipe-comprimido.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/comprimido-phellipe.mp4",
       instagramUrl: "https://www.instagram.com/phellipe_oliveira"
     },
     { 
       handle: "@cristina.ruffatto",
-      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/cristina-comprimido.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/comprimido-cristina.mp4",
       instagramUrl: "https://www.instagram.com/cristina.ruffatto"
     },
     { 
       handle: "@riveodonto",
-      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/riveodonto-comprimido.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/comprimido-riveodonto.mp4",
       instagramUrl: "https://www.instagram.com/riveodonto"
     },
   ];
@@ -253,22 +253,25 @@ const Index = () => {
                       '--background-video': `url(${video.src})`
                     } as React.CSSProperties}
                   >
-                    <VideoPlayer
-                      
-                      src={video.src}
-                      handle={video.handle}
-                      instagramUrl={video.instagramUrl}
-                    />
+                    <div className="overflow-hidden rounded-xl"> 
+                      <VideoPlayer
+                        src={video.src}
+                        handle={video.handle}
+                        instagramUrl={video.instagramUrl}
+                      />
+                    </div>
+                    
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-4" />
-              <CarouselNext className="right-4" />
+              
+              <CarouselPrevious className="left-8 h-20 w-20 shadow-lg transition-all hover:scale-110" />
+              <CarouselNext className="right-8 h-20 w-20 shadow-lg transition-all hover:scale-110" />
+
             </Carousel>
           </div>
         </div>
       </section>
-
 
 
       {/* CTA Final */}

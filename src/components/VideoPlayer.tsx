@@ -21,58 +21,43 @@ export const VideoPlayer = ({ src, handle, instagramUrl }: VideoPlayerProps) => 
 
   return (
     <div className="space-y-3">
-      {/* Container principal com perspectiva 3D */}
-      <div className="relative w-full h-[500px] flex items-center justify-center video-3d-container">
-        
-        {/* Camada 1: Fundo ampliado com blur forte */}
-        <div className="absolute inset-0 video-3d-background">
-          <video
-            src={src}
-            loop
-            autoPlay
-            muted
-            playsInline
-            className="w-full h-full object-cover scale-150 blur-xl opacity-30 grayscale-[30%]"
-          />
-        </div>
+      {/* Container principal */}
+      <div 
+        className="relative w-full h-[500px] flex items-center justify-center"
+        style={{ perspective: "2000px" }}
+      >
 
-        {/* Camada 2: Lateral esquerda inclinada */}
-        <div className="absolute video-3d-left">
-          <div className="aspect-[9/16] h-[450px] bg-secondary/50 rounded-lg overflow-hidden shadow-2xl">
-            <video
-              src={src}
-              loop
-              //autoPlay
-              muted
-              playsInline
-              className="w-full h-full object-cover blur-sm"
-            />
-          </div>
-        </div>
+        {/* O "RETÂNGULO BLUR" DECORATIVO DA ESQUERDA */}
+        <div 
+          className="aspect-[9/16] h-[500px] bg-secondary/50 rounded-xl shadow-2xl 
+                     absolute z-10 filter blur-md brightness-75"
+          style={{
+            transform: "translateX(-60%) translateZ(-100px)",
+            opacity: 0.6,
+            pointerEvents: "none" // Garante que não é clicável
+          }}
+        ></div>
 
-        {/* Camada 3: Lateral direita inclinada */}
-        <div className="absolute video-3d-right">
-          <div className="aspect-[9/16] h-[450px] bg-secondary/50 rounded-lg overflow-hidden shadow-2xl">
-            <video
-              src={src}
-              loop
-              //autoPlay
-              muted
-              playsInline
-              className="w-full h-full object-cover blur-sm"
-            />
-          </div>
-        </div>
+        {/* O "RETÂNGULO BLUR" DECORATIVO DA DIREITA */}
+        <div 
+          className="aspect-[9/16] h-[500px] bg-secondary/50 rounded-xl shadow-2xl 
+                     absolute z-10 filter blur-md brightness-75"
+          style={{
+            transform: "translateX(60%) translateZ(-100px)",
+            opacity: 0.6,
+            pointerEvents: "none" // Garante que não é clicável
+          }}
+        ></div>
 
-        {/* Camada 4: Vídeo central nítido */}
-        <div className="relative video-3d-center z-10">
+        {/* Vídeo central nítido */}
+        <div className="relative z-20">
           <div className="aspect-[9/16] h-[500px] bg-secondary/50 rounded-xl overflow-hidden shadow-2xl group">
             <video
               ref={videoRef}
               src={src}
               loop
               autoPlay
-              muted
+              muted={isMuted}
               playsInline
               className="w-full h-full object-cover"
             />
