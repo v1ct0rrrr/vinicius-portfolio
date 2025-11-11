@@ -265,8 +265,8 @@ const Index = () => {
                 ))}
               </CarouselContent>
               
-              <CarouselPrevious className="left-8 h-20 w-20 shadow-lg transition-all hover:scale-110" />
-              <CarouselNext className="right-8 h-20 w-20 shadow-lg transition-all hover:scale-110" />
+              <CarouselPrevious className="left-28 h-20 w-20 shadow-lg transition-all hover:scale-110" />
+              <CarouselNext className="right-28 h-20 w-20 shadow-lg transition-all hover:scale-110" />
 
             </Carousel>
           </div>
