@@ -59,27 +59,27 @@ const Index = () => {
   const portfolioVideos = [
     { 
       handle: "@phcardoso.oficial",
-      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/phcardoso.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/phcardoso-comprimido.mp4",
       instagramUrl: "https://www.instagram.com/phcardoso.oficial"
     },
     { 
       handle: "@ovendedorempresario.ofc",
-      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/ovendedor.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/ovendedor-comprimido.mp4",
       instagramUrl: "https://www.instagram.com/ovendedorempresario.ofc"
     },
     { 
       handle: "@phellipe_oliveira",
-      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/phellipe.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/phellipe-comprimido.mp4",
       instagramUrl: "https://www.instagram.com/phellipe_oliveira"
     },
     { 
       handle: "@cristina.ruffatto",
-      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/cristina.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/cristina-comprimido.mp4",
       instagramUrl: "https://www.instagram.com/cristina.ruffatto"
     },
     { 
       handle: "@riveodonto",
-      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/riveodonto.mp4",
+      src: "https://pub-9e61558332574649abc05e141adb3d10.r2.dev/riveodonto-comprimido.mp4",
       instagramUrl: "https://www.instagram.com/riveodonto"
     },
   ];
@@ -254,6 +254,7 @@ const Index = () => {
                     } as React.CSSProperties}
                   >
                     <VideoPlayer
+                      
                       src={video.src}
                       handle={video.handle}
                       instagramUrl={video.instagramUrl}
